@@ -2,1761 +2,407 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>AMP Heating & Cooling | Chicago HVAC Services</title>
-<meta name="description" content="AMP Heating & Cooling provides residential and commercial heating, air conditioning, repairs, and maintenance throughout Chicago and surrounding suburbs.">
-
-<style>
-:root {
-  --navy: #091728;
-  --navy2: #10243c;
-  --blue: #1689f5;
-  --lightblue: #eaf5ff;
-  --white: #ffffff;
-  --text: #1d2c40;
-  --muted: #64748b;
-  --border: #e3eaf1;
-  --light: #f5f8fc;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 95px;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--text);
-  background: var(--white);
-  line-height: 1.6;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-button, input, select, textarea {
-  font: inherit;
-}
-
-button, a {
-  -webkit-tap-highlight-color: transparent;
-}
-
-.container {
-  width: min(1160px, 92%);
-  margin: auto;
-}
-
-.topbar {
-  background: #06111f;
-  color: #cbd8e7;
-  text-align: center;
-  padding: 9px;
-  font-size: 12px;
-  letter-spacing: .5px;
-}
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: var(--white);
-  border-bottom: 1px solid var(--border);
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 78px;
-  gap: 20px;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 25px;
-  font-weight: 900;
-  letter-spacing: -1px;
-}
-
-.logo-icon {
-  background: var(--blue);
-  color: white;
-  width: 45px;
-  height: 45px;
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  font-size: 25px;
-}
-
-.logo small {
-  display: block;
-  font-size: 10px;
-  letter-spacing: 2px;
-  font-weight: 700;
-  color: var(--muted);
-  line-height: 1.3;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-}
-
-nav a {
-  color: #35465b;
-  font-size: 14px;
-  font-weight: 700;
-  transition: .2s;
-}
-
-nav a:hover {
-  color: var(--blue);
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-  padding: 14px 23px;
-  border-radius: 9px;
-  font-weight: 700;
-  font-size: 14px;
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: .2s;
-  text-align: center;
-}
-
-.btn-primary {
-  background: var(--blue);
-  color: white;
-}
-
-.btn-primary:hover {
-  background: #0871d4;
-  transform: translateY(-2px);
-}
-
-.btn-outline {
-  border-color: #8096ae;
-  color: white;
-}
-
-.btn-outline:hover {
-  background: rgba(255,255,255,.1);
-}
-
-.btn-dark {
-  background: var(--navy);
-  color: white;
-}
-
-.menu-btn {
-  display: none;
-  background: none;
-  border: 0;
-  font-size: 28px;
-  cursor: pointer;
-}
-
-/* HERO */
-
-.hero {
-  background:
-    radial-gradient(circle at 83% 30%, #155386 0%, transparent 37%),
-    linear-gradient(125deg, #071321, #122a46);
-  color: white;
-  padding: 95px 0;
-  overflow: hidden;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  align-items: center;
-  gap: 60px;
-}
-
-.eyebrow {
-  display: inline-block;
-  color: #91cdff;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  margin-bottom: 17px;
-}
-
-.hero h1 {
-  font-size: clamp(40px, 5vw, 67px);
-  line-height: 1.09;
-  letter-spacing: -2px;
-  margin: 0 0 24px;
-}
-
-.hero h1 span {
-  color: #54b7ff;
-}
-
-.hero p {
-  color: #c4d4e5;
-  font-size: 17px;
-  max-width: 520px;
-  margin-bottom: 30px;
-}
-
-.hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 13px;
-}
-
-.hero-note {
-  font-size: 13px;
-  color: #aac4df;
-  margin-top: 32px;
-}
-
-/* THERMOSTAT VISUAL */
-
-.visual {
-  position: relative;
-  padding: 25px;
-}
-
-.thermostat-card {
-  background: rgba(255,255,255,.09);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,.16);
-  border-radius: 25px;
-  padding: 35px;
-  box-shadow: 0 35px 70px rgba(0,0,0,.22);
-  text-align: center;
-}
-
-.visual-label {
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 11px;
-  color: #a6c8e7;
-}
-
-.thermostat {
-  width: 235px;
-  height: 235px;
-  border-radius: 50%;
-  margin: 30px auto;
-  background: linear-gradient(135deg, #173d62, #0b1d31);
-  border: 12px solid #53b6ff;
-  outline: 9px solid rgba(83,182,255,.13);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  box-shadow: 0 0 55px rgba(22,137,245,.2);
-}
-
-.thermostat strong {
-  font-size: 73px;
-  font-weight: 500;
-  line-height: 1.1;
-}
-
-.thermostat small {
-  color: #b8d9f3;
-  font-size: 12px;
-}
-
-.system-tags {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-
-.system-tags span {
-  padding: 8px 12px;
-  background: rgba(255,255,255,.1);
-  border: 1px solid rgba(255,255,255,.13);
-  border-radius: 30px;
-  font-size: 12px;
-}
-
-/* GENERAL SECTIONS */
-
-section {
-  padding: 90px 0;
-}
-
-.section-heading {
-  max-width: 690px;
-  margin-bottom: 40px;
-}
-
-.section-heading.center {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.kicker {
-  color: var(--blue);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 800;
-  font-size: 12px;
-}
-
-h2 {
-  font-size: clamp(29px, 4vw, 43px);
-  line-height: 1.2;
-  letter-spacing: -1px;
-  margin: 10px 0 17px;
-}
-
-.section-heading p {
-  color: var(--muted);
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-.service-card {
-  border: 1px solid var(--border);
-  padding: 28px;
-  border-radius: 15px;
-  background: white;
-  transition: .2s;
-}
-
-.service-card:hover {
-  border-color: #acd9ff;
-  box-shadow: 0 15px 40px rgba(7,35,65,.09);
-  transform: translateY(-4px);
-}
-
-.service-icon {
-  display: grid;
-  place-items: center;
-  width: 55px;
-  height: 55px;
-  border-radius: 12px;
-  background: var(--lightblue);
-  font-size: 26px;
-  margin-bottom: 20px;
-}
-
-.service-card h3 {
-  font-size: 19px;
-  line-height: 1.3;
-  margin: 0 0 12px;
-}
-
-.service-card p {
-  font-size: 14px;
-  color: var(--muted);
-  min-height: 90px;
-}
-
-.service-card a {
-  color: var(--blue);
-  font-size: 14px;
-  font-weight: 800;
-}
-
-.light-section {
-  background: var(--light);
-}
-
-.split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 75px;
-  align-items: center;
-}
-
-.feature-list {
-  display: grid;
-  gap: 20px;
-  margin-top: 27px;
-}
-
-.feature {
-  display: flex;
-  gap: 16px;
-}
-
-.check {
-  background: #e1f2ff;
-  color: var(--blue);
-  width: 34px;
-  min-width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-weight: 900;
-}
-
-.feature h3 {
-  margin: 0 0 5px;
-  font-size: 17px;
-}
-
-.feature p {
-  margin: 0;
-  font-size: 14px;
-  color: var(--muted);
-}
-
-.feature-panel {
-  background: var(--navy);
-  color: white;
-  padding: 45px;
-  border-radius: 20px;
-  min-height: 370px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-image:
-    radial-gradient(circle at top right, #206a9d, transparent 60%);
-}
-
-.feature-panel .large {
-  font-size: 62px;
-  margin-bottom: 17px;
-}
-
-.feature-panel h3 {
-  font-size: 31px;
-  line-height: 1.25;
-  margin: 0 0 15px;
-}
-
-.feature-panel p {
-  color: #c5d8ed;
-}
-
-/* SERVICE AREAS */
-
-.area-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 13px;
-  margin-top: 30px;
-}
-
-.area {
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 17px;
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.area::before {
-  content: "✓";
-  color: var(--blue);
-  margin-right: 10px;
-}
-
-.area-notice {
-  background: #e7f3ff;
-  color: #235783;
-  padding: 19px;
-  border-radius: 10px;
-  margin-top: 23px;
-  font-size: 14px;
-}
-
-/* HOW IT WORKS */
-
-.steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-}
-
-.step {
-  padding: 26px;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-}
-
-.step-number {
-  font-size: 42px;
-  color: var(--blue);
-  font-weight: 900;
-}
-
-.step h3 {
-  margin: 12px 0;
-}
-
-.step p {
-  color: var(--muted);
-  font-size: 14px;
-}
-
-/* REQUEST FORM */
-
-.request-section {
-  background: var(--navy);
-  color: white;
-}
-
-.request-layout {
-  display: grid;
-  grid-template-columns: .85fr 1.15fr;
-  gap: 60px;
-  align-items: start;
-}
-
-.request-info p {
-  color: #c2d1e3;
-}
-
-.request-info h2 {
-  margin-bottom: 20px;
-}
-
-.contact-detail {
-  padding: 15px 0;
-  border-bottom: 1px solid #314761;
-  color: #d5e2f1;
-}
-
-.request-form {
-  background: white;
-  padding: 35px;
-  border-radius: 18px;
-  color: var(--text);
-}
-
-.request-form h3 {
-  font-size: 23px;
-  margin: 0 0 22px;
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.field {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  margin-bottom: 17px;
-}
-
-.field label {
-  font-size: 13px;
-  font-weight: 800;
-}
-
-.field input,
-.field select,
-.field textarea {
-  width: 100%;
-  padding: 13px;
-  border: 1px solid #d7e0e9;
-  border-radius: 8px;
-  outline: none;
-  background: white;
-  color: var(--text);
-  font-size: 14px;
-}
-
-.field input:focus,
-.field select:focus,
-.field textarea:focus {
-  border-color: var(--blue);
-  box-shadow: 0 0 0 3px #e0f0ff;
-}
-
-.field textarea {
-  resize: vertical;
-  min-height: 110px;
-}
-
-.submit-btn {
-  width: 100%;
-  margin-top: 6px;
-}
-
-.form-note {
-  color: var(--muted);
-  font-size: 12px;
-  margin: 14px 0 0;
-}
-
-#formMessage {
-  margin-top: 12px;
-  font-size: 13px;
-  color: #b42318;
-}
-
-.hidden-field {
-  display: none;
-}
-
-/* FINAL CTA */
-
-.final-cta {
-  text-align: center;
-}
-
-.final-cta p {
-  color: var(--muted);
-  margin-bottom: 25px;
-}
-
-footer {
-  background: #06111e;
-  color: #c8d5e5;
-  padding: 55px 0 23px;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 40px;
-}
-
-footer h3 {
-  color: white;
-}
-
-footer p, footer a {
-  font-size: 14px;
-  color: #aebed0;
-}
-
-.footer-links {
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-}
-
-.footer-bottom {
-  border-top: 1px solid #28384b;
-  margin-top: 38px;
-  padding-top: 22px;
-  font-size: 12px;
-  color: #849ab1;
-}
-
-/* CHAT ASSISTANT */
-
-.chat-button {
-  position: fixed;
-  right: 25px;
-  bottom: 25px;
-  z-index: 200;
-  background: var(--blue);
-  color: white;
-  border: 0;
-  padding: 15px 22px;
-  border-radius: 40px;
-  font-weight: 800;
-  box-shadow: 0 8px 30px rgba(0,0,0,.25);
-  cursor: pointer;
-}
-
-.chat-box {
-  position: fixed;
-  right: 25px;
-  bottom: 90px;
-  width: min(370px, calc(100vw - 30px));
-  height: 470px;
-  max-height: calc(100vh - 120px);
-  z-index: 200;
-  background: white;
-  border-radius: 18px;
-  box-shadow: 0 20px 70px rgba(0,0,0,.25);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.chat-header {
-  background: var(--navy);
-  color: white;
-  padding: 17px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.chat-header strong {
-  display: block;
-}
-
-.chat-header small {
-  color: #a7c4df;
-}
-
-.chat-header button {
-  background: none;
-  color: white;
-  border: none;
-  font-size: 25px;
-  cursor: pointer;
-}
-
-.chat-messages {
-  padding: 18px;
-  flex: 1;
-  overflow-y: auto;
-  background: #f6f9fc;
-}
-
-.message {
-  padding: 11px 14px;
-  border-radius: 12px;
-  margin-bottom: 12px;
-  max-width: 90%;
-  font-size: 13px;
-  white-space: pre-wrap;
-}
-
-.bot-message {
-  background: white;
-  border: 1px solid var(--border);
-}
-
-.user-message {
-  background: var(--blue);
-  color: white;
-  margin-left: auto;
-}
-
-.chat-input {
-  display: flex;
-  padding: 12px;
-  gap: 8px;
-  border-top: 1px solid var(--border);
-}
-
-.chat-input input {
-  flex: 1;
-  min-width: 0;
-  border: 1px solid var(--border);
-  padding: 10px;
-  border-radius: 8px;
-}
-
-.chat-input button {
-  border: none;
-  border-radius: 8px;
-  background: var(--blue);
-  color: white;
-  padding: 10px 14px;
-  cursor: pointer;
-}
-
-[hidden] {
-  display: none !important;
-}
-
-/* MOBILE */
-
-@media(max-width: 950px) {
-  .grid, .area-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .hero-grid, .split, .request-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .hero {
-    padding: 65px 0;
-  }
-
-  .visual {
-    max-width: 550px;
-    width: 100%;
-    margin: auto;
-  }
-
-  .menu-btn {
-    display: block;
-  }
-
-  nav {
-    display: none;
-    position: absolute;
-    top: 78px;
-    left: 0;
-    right: 0;
-    background: white;
-    padding: 25px;
-    flex-direction: column;
-    align-items: stretch;
-    border-bottom: 1px solid var(--border);
-    box-shadow: 0 15px 30px rgba(0,0,0,.1);
-  }
-
-  nav.open {
-    display: flex;
-  }
-}
-
-@media(max-width: 600px) {
-  section {
-    padding: 65px 0;
-  }
-
-  .grid, .area-list, .steps,
-  .form-grid, .footer-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero h1 {
-    font-size: 42px;
-  }
-
-  .visual {
-    padding: 0;
-  }
-
-  .thermostat-card {
-    padding: 25px 10px;
-  }
-
-  .thermostat {
-    width: 190px;
-    height: 190px;
-  }
-
-  .thermostat strong {
-    font-size: 58px;
-  }
-
-  .service-card p {
-    min-height: auto;
-  }
-
-  .request-form {
-    padding: 24px 18px;
-  }
-
-  .chat-button {
-    bottom: 16px;
-    right: 16px;
-  }
-
-  .chat-box {
-    right: 15px;
-    bottom: 77px;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AMP Heating & Cooling provides professional HVAC repair, installation and maintenance throughout Chicago and the surrounding suburbs.">
+  <title>AMP Heating & Cooling | Chicago HVAC Services</title>
+
+  <style>
+    :root {
+      --navy: #081b35;
+      --blue: #1684f8;
+      --light: #f3f7fc;
+      --text: #172b45;
+      --muted: #61738a;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Arial, sans-serif; color: var(--text); line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    button, input, textarea, select { font: inherit; }
+    button { cursor: pointer; }
+    .container { width: min(1150px, 92%); margin: auto; }
+    .topbar { background: #061326; color: white; padding: 9px 0; font-size: 13px; }
+    .topbar .container { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .topbar a { color: #85c9ff; }
+    header { background: white; position: sticky; top: 0; z-index: 20; box-shadow: 0 2px 14px #09274a13; }
+    .navbar { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 900; color: var(--navy); }
+    .logo-icon { padding: 10px; border-radius: 12px; background: var(--navy); color: white; font-size: 23px; letter-spacing: -1px; }
+    .logo small { display: block; font-size: 9px; letter-spacing: 1.2px; color: var(--blue); }
+    nav { display: flex; align-items: center; gap: 18px; }
+    nav a { font-size: 13px; font-weight: 700; }
+    nav a:hover { color: var(--blue); }
+    .menu-btn { display: none; background: none; border: 0; font-size: 27px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 9px; padding: 14px 23px; background: var(--blue); color: white; font-size: 14px; font-weight: bold; border: none; transition: .2s; }
+    .btn:hover { background: #0065d5; transform: translateY(-2px); }
+    .btn-white { background: white; color: var(--navy); }
+    .btn-white:hover { background: #e6efff; }
+    .hero { position: relative; overflow: hidden; background: linear-gradient(115deg,#071a34 0%,#10447b 100%); color: white; padding: 95px 0; }
+    .hero-content { max-width: 750px; position: relative; z-index: 1; }
+    .eyebrow { display: inline-block; font-size: 12px; font-weight: 800; color: #1684f8; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; }
+    .hero .eyebrow { color: #87ceff; }
+    h1 { font-size: clamp(38px, 5.5vw, 67px); line-height: 1.12; letter-spacing: -2px; margin: 0 0 24px; }
+    .hero p { font-size: 18px; color: #d8e6f5; max-width: 650px; }
+    .hero-buttons { display: flex; gap: 13px; flex-wrap: wrap; margin-top: 30px; }
+    .hero-circle { width: 420px; height: 420px; border-radius: 50%; border: 75px solid #ffffff09; position: absolute; top: -100px; right: -90px; }
+    .trust { background: #0d2c50; color: white; padding: 25px 0; }
+    .trust-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; text-align: center; font-size: 14px; font-weight: bold; }
+    .trust span { color: #5dd4ff; margin-right: 6px; }
+    section.content { padding: 90px 0; }
+    .light { background: var(--light); }
+    .section-title { font-size: clamp(28px, 3vw, 43px); line-height: 1.2; letter-spacing: -1px; margin: 0 0 16px; color: var(--navy); }
+    .section-intro { max-width: 650px; color: var(--muted); margin-bottom: 35px; }
+    .cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    .card { background: white; padding: 32px; border: 1px solid #e3eaf2; border-radius: 16px; box-shadow: 0 9px 30px #102f5110; transition: .2s; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px #102f5122; }
+    .card .symbol { font-size: 32px; }
+    .card h3 { font-size: 21px; margin-bottom: 10px; }
+    .card p { color: var(--muted); font-size: 14px; }
+    .card a { color: #006fe6; font-weight: bold; font-size: 14px; }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .checklist { margin: 25px 0; }
+    .checklist p { padding: 10px 0; border-bottom: 1px solid #e1e8f0; }
+    .checklist b { color: #1684f8; margin-right: 8px; }
+    .photo { min-height: 360px; background: linear-gradient(130deg,#09223e99,#06274a55),url("https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=85") center/cover; border-radius: 20px; }
+    .steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    .step { padding: 30px; border-radius: 16px; background: #f2f7fd; }
+    .number { font-size: 39px; font-weight: 900; color: #1684f8; }
+    .areas { display: flex; flex-wrap: wrap; gap: 10px; margin: 25px 0; }
+    .area { background: white; padding: 10px 15px; border: 1px solid #dae5f1; border-radius: 30px; font-size: 13px; font-weight: bold; }
+    .cta { background: linear-gradient(100deg,#091c35,#17589c); color: white; text-align: center; padding: 70px 0; }
+    .cta h2 { font-size: 36px; margin: 0 0 10px; }
+    .cta p { color: #d3e7fb; margin-bottom: 30px; }
+    .footer { background: #061326; color: white; padding: 55px 0 20px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 30px; }
+    .footer h3 { margin-top: 0; }
+    .footer a { display: block; padding: 5px 0; color: #c9d6e6; }
+    .footer p { color: #bacbdf; }
+    .copyright { border-top: 1px solid #29405a; margin-top: 35px; padding-top: 20px; font-size: 13px; color: #a8bdd5; }
+    .chat-launch { position: fixed; right: 22px; bottom: 22px; z-index: 90; background: var(--blue); color: white; border: 0; border-radius: 40px; padding: 16px 23px; box-shadow: 0 8px 25px #0004; font-weight: bold; }
+    .chat-panel { display: none; position: fixed; bottom: 86px; right: 20px; z-index: 100; width: min(370px,calc(100vw - 40px)); height: 490px; max-height: calc(100vh - 110px); background: white; border-radius: 17px; box-shadow: 0 15px 65px #0004; overflow: hidden; flex-direction: column; }
+    .chat-panel.open { display: flex; }
+    .chat-header { background: var(--navy); padding: 18px; color: white; display: flex; justify-content: space-between; align-items: center; }
+    .chat-header button { background: transparent; color: white; border: none; font-size: 26px; }
+    .chat-messages { flex: 1; overflow-y: auto; padding: 15px; background: #f5f8fd; }
+    .message { max-width: 90%; margin-bottom: 12px; padding: 12px; border-radius: 12px; font-size: 13px; overflow-wrap: anywhere; }
+    .assistant { background: white; color: var(--text); }
+    .user { background: var(--blue); color: white; margin-left: auto; }
+    .chat-form { display: flex; padding: 12px; border-top: 1px solid #e4ebf3; gap: 7px; }
+    .chat-form input { flex: 1; min-width: 0; border: 1px solid #dce4ef; border-radius: 8px; padding: 10px; }
+    .chat-form button { background: var(--blue); color: white; border: 0; border-radius: 8px; padding: 0 15px; }
+    .chat-note { padding: 8px 12px; font-size: 10px; color: var(--muted); text-align: center; }
+
+    @media(max-width:850px) {
+      .menu-btn { display: block; }
+      nav { display: none; position: absolute; top: 82px; left: 0; right: 0; background: white; flex-direction: column; padding: 22px; box-shadow: 0 10px 20px #0002; align-items: stretch; }
+      nav.open { display: flex; }
+      .cards, .steps { grid-template-columns: repeat(2,1fr); }
+      .split { grid-template-columns: 1fr; gap: 30px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media(max-width:580px) {
+      .hero { padding: 75px 0; }
+      .cards, .steps, .trust-grid, .footer-grid { grid-template-columns: 1fr; }
+      .trust-grid { text-align: left; }
+      .navbar { min-height: 75px; }
+      nav { top: 75px; }
+      section.content { padding: 65px 0; }
+      .topbar { font-size: 11px; }
+    }
+  </style>
 </head>
 
 <body>
-
-<!-- TOP BAR -->
-
-<div class="topbar">
-  RESIDENTIAL & COMMERCIAL HVAC • CHICAGO & SURROUNDING SUBURBS
-</div>
-
-<!-- NAVIGATION -->
-
-<header>
-  <div class="container nav">
-    <a class="logo" href="#home">
-      <span class="logo-icon">⚡</span>
-      <span>
-        AMP
-        <small>HEATING & COOLING</small>
-      </span>
-    </a>
-
-    <button class="menu-btn" id="menuBtn"
-      aria-label="Open navigation"
-      aria-expanded="false">☰</button>
-
-    <nav id="mainNav">
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#about">About AMP</a>
-      <a href="#areas">Service Areas</a>
-      <a href="#contact">Contact</a>
-      <a class="btn btn-primary" href="#request">Request Service →</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-
-<!-- HOME -->
-
-<section class="hero" id="home">
-  <div class="container hero-grid">
-    <div>
-      <div class="eyebrow">
-        AMP HEATING & COOLING
-      </div>
-
-      <h1>
-        POWERING
-        YOUR <span>COMFORT.</span>
-      </h1>
-
-      <p>
-        Professional heating and cooling solutions
-        for homes and businesses across Chicago
-        and the surrounding suburbs.
-      </p>
-
-      <p>
-        From air conditioning repairs to furnace
-        replacements and commercial HVAC service,
-        AMP is here to help.
-      </p>
-
-      <div class="hero-buttons">
-        <a class="btn btn-primary" href="#request">
-          Request Service →
-        </a>
-
-        <a class="btn btn-outline" href="#services">
-          Explore Services
-        </a>
-      </div>
-
-      <div class="hero-note">
-        Heating • Air Conditioning • Maintenance • Commercial HVAC
-      </div>
-    </div>
-
-    <div class="visual">
-      <div class="thermostat-card">
-        <div class="visual-label">
-          YOUR COMFORT MATTERS
-        </div>
-
-        <div class="thermostat">
-          <strong>72°</strong>
-          <small>COMFORT AT HOME</small>
-        </div>
-
-        <div class="system-tags">
-          <span>❄ Cooling</span>
-          <span>♨ Heating</span>
-          <span>⚙ Commercial</span>
-        </div>
-      </div>
+  <div class="topbar">
+    <div class="container">
+      <span>📍 Serving Chicago & Surrounding Suburbs</span>
+      <span>Questions? <a href="tel:2242761821">(224) 276-1821</a></span>
     </div>
   </div>
-</section>
 
-<!-- SERVICES -->
-
-<section id="services">
-  <div class="container">
-
-    <div class="section-heading center">
-      <span class="kicker">OUR SERVICES</span>
-      <h2>Complete Heating & Cooling Solutions</h2>
-      <p>
-        HVAC solutions for residential and
-        commercial properties.
-      </p>
-    </div>
-
-    <div class="grid">
-
-      <article class="service-card">
-        <div class="service-icon">❄️</div>
-        <h3>Air Conditioning</h3>
-        <p>
-          AC troubleshooting, repairs, installation,
-          replacement, and cooling system service.
-        </p>
-        <a href="#request">Request Cooling Service →</a>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">♨️</div>
-        <h3>Heating & Furnaces</h3>
-        <p>
-          Furnace repairs, heating inspections,
-          maintenance, and new system replacements.
-        </p>
-        <a href="#request">Request Heating Service →</a>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">🏢</div>
-        <h3>Commercial HVAC</h3>
-        <p>
-          Rooftop units, commercial heating,
-          cooling systems, maintenance, and repairs.
-        </p>
-        <a href="#request">Commercial Services →</a>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">🛠️</div>
-        <h3>HVAC Maintenance</h3>
-        <p>
-          Seasonal inspections, preventative
-          maintenance, and equipment tune-ups.
-        </p>
-        <a href="#request">Schedule Maintenance →</a>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT AMP -->
-
-<section class="light-section" id="about">
-  <div class="container split">
-
-    <div>
-      <span class="kicker">WHY CHOOSE AMP</span>
-      <h2>Comfort Starts With the Right HVAC Team</h2>
-
-      <p>
-        At AMP Heating & Cooling, our focus is
-        helping homeowners and businesses find
-        dependable solutions for their heating
-        and cooling needs.
-      </p>
-
-      <div class="feature-list">
-
-        <div class="feature">
-          <div class="check">✓</div>
-          <div>
-            <h3>Residential & Commercial</h3>
-            <p>
-              Service options for homes, offices,
-              shops, and commercial buildings.
-            </p>
-          </div>
-        </div>
-
-        <div class="feature">
-          <div class="check">✓</div>
-          <div>
-            <h3>Repair & Replacement</h3>
-            <p>
-              Solutions for both existing equipment
-              and new HVAC installations.
-            </p>
-          </div>
-        </div>
-
-        <div class="feature">
-          <div class="check">✓</div>
-          <div>
-            <h3>Clear Communication</h3>
-            <p>
-              We focus on understanding your HVAC
-              problem and discussing next steps.
-            </p>
-          </div>
-        </div>
-
-        <div class="feature">
-          <div class="check">✓</div>
-          <div>
-            <h3>Local Service</h3>
-            <p>
-              Serving communities throughout
-              Chicagoland and Northern Illinois.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="feature-panel">
-      <div class="large">⚡</div>
-      <h3>
-        AMP Heating & Cooling
-      </h3>
-      <p>
-        Powering your comfort with heating,
-        cooling, and HVAC solutions designed
-        around your property.
-      </p>
-
-      <a class="btn btn-primary" href="#request"
-        style="align-self:flex-start;margin-top:20px">
-        Get Started →
+  <header>
+    <div class="container navbar">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">AMP</span>
+        <span>HEATING & COOLING<small>YOUR COMFORT. OUR PRIORITY.</small></span>
       </a>
+      <button class="menu-btn" id="menuButton" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav id="nav">
+        <a href="index.html">Home</a>
+        <a href="heating.html">Heating</a>
+        <a href="cooling.html">Cooling</a>
+        <a href="about.html">About AMP</a>
+        <a href="areas.html">Service Areas</a>
+        <a href="request.html">Request Service</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
+  </header>
 
-  </div>
-</section>
-
-<!-- SERVICE AREAS -->
-
-<section id="areas">
-  <div class="container">
-
-    <div class="section-heading">
-      <span class="kicker">SERVICE AREAS</span>
-      <h2>Proudly Serving Chicago & Its Suburbs</h2>
-      <p>
-        AMP Heating & Cooling serves customers
-        throughout the greater Chicago area,
-        surrounding suburbs, and select parts
-        of Northern Illinois.
-      </p>
-    </div>
-
-    <div class="area-list">
-      <div class="area">Chicago</div>
-      <div class="area">Algonquin</div>
-      <div class="area">Crystal Lake</div>
-      <div class="area">Schaumburg</div>
-      <div class="area">Arlington Heights</div>
-      <div class="area">Elgin</div>
-      <div class="area">Naperville</div>
-      <div class="area">Aurora</div>
-      <div class="area">McHenry County</div>
-      <div class="area">Palatine</div>
-      <div class="area">Evanston</div>
-      <div class="area">Rockford Area</div>
-    </div>
-
-    <div class="area-notice">
-      📍 Don't see your city?
-      We also serve surrounding Chicago suburbs.
-      Contact AMP to check service availability
-      at your location.
-    </div>
-
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-
-<section class="light-section" id="process">
-  <div class="container">
-
-    <div class="section-heading center">
-      <span class="kicker">SIMPLE PROCESS</span>
-      <h2>Getting HVAC Service Is Easy</h2>
-      <p>
-        Tell us what you need and we'll help you
-        explore the next steps.
-      </p>
-    </div>
-
-    <div class="steps">
-      <div class="step">
-        <div class="step-number">01</div>
-        <h3>Request Service</h3>
-        <p>
-          Complete our online form with your
-          contact information and HVAC issue.
-        </p>
-      </div>
-
-      <div class="step">
-        <div class="step-number">02</div>
-        <h3>We Review Your Request</h3>
-        <p>
-          Our team reviews the information and
-          determines the next step for your needs.
-        </p>
-      </div>
-
-      <div class="step">
-        <div class="step-number">03</div>
-        <h3>We Contact You</h3>
-        <p>
-          We reach out to discuss your situation
-          and arrange service when available.
-        </p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- REQUEST SERVICE -->
-
-<section class="request-section" id="request">
-  <div class="container request-layout">
-
-    <div class="request-info">
-      <span class="kicker">REQUEST SERVICE</span>
-
-      <h2>Let's Get Your Comfort Back</h2>
-
-      <p>
-        Need an HVAC repair, installation,
-        maintenance visit, or commercial service?
-      </p>
-
-      <p>
-        Complete the request form and provide
-        information about your system.
-      </p>
-
-      <div class="contact-detail">
-        ✓ Residential HVAC
-      </div>
-
-      <div class="contact-detail">
-        ✓ Commercial HVAC
-      </div>
-
-      <div class="contact-detail">
-        ✓ Chicago & Surrounding Suburbs
-      </div>
-
-      <div class="contact-detail">
-        ✓ Heating & Cooling Solutions
-      </div>
-
-      <p style="font-size:13px;margin-top:25px">
-        Submitting a request does not confirm
-        a service appointment.
-      </p>
-    </div>
-
-    <form class="request-form"
-      id="serviceForm"
-      method="POST">
-
-      <h3>Request HVAC Service</h3>
-
-      <input type="hidden"
-        name="_subject"
-        value="New AMP Heating & Cooling Service Request">
-
-      <input type="hidden"
-        name="_template"
-        value="table">
-
-      <input type="hidden"
-        name="_autoresponse"
-        value="Thank you for contacting AMP Heating & Cooling. We received your service request. Our team will review your information and contact you to discuss the next steps. This email does not confirm an appointment.">
-
-      <input type="text"
-        name="_honey"
-        class="hidden-field"
-        tabindex="-1"
-        autocomplete="off">
-
-      <div class="form-grid">
-
-        <div class="field">
-          <label for="customerName">Full Name *</label>
-          <input type="text"
-            id="customerName"
-            name="name"
-            placeholder="Your full name"
-            autocomplete="name"
-            required>
+  <main>
+    <section class="hero">
+      <div class="hero-circle"></div>
+      <div class="container hero-content">
+        <span class="eyebrow">Professional HVAC Service in Chicagoland</span>
+        <h1>Heating & Cooling You Can Count On.</h1>
+        <p>Reliable heating and air conditioning service for homes and businesses throughout Chicago and the surrounding suburbs.</p>
+        <div class="hero-buttons">
+          <a class="btn" href="request.html">Request Service →</a>
+          <a class="btn btn-white" href="tel:2242761821">☎ (224) 276-1821</a>
         </div>
-
-        <div class="field">
-          <label for="customerPhone">Phone Number *</label>
-          <input type="tel"
-            id="customerPhone"
-            name="phone"
-            placeholder="Phone number"
-            autocomplete="tel"
-            required>
-        </div>
-
-        <div class="field">
-          <label for="customerEmail">Email Address *</label>
-          <input type="email"
-            id="customerEmail"
-            name="email"
-            placeholder="Email address"
-            autocomplete="email"
-            required>
-        </div>
-
-        <div class="field">
-          <label for="customerCity">City *</label>
-          <input type="text"
-            id="customerCity"
-            name="city"
-            placeholder="City"
-            required>
-        </div>
-
       </div>
+    </section>
 
-      <div class="field">
-        <label for="customerAddress">Service Address *</label>
-        <input type="text"
-          id="customerAddress"
-          name="service_address"
-          placeholder="Street address and ZIP code"
-          autocomplete="street-address"
-          required>
+    <section class="trust">
+      <div class="container trust-grid">
+        <div><span>✓</span> Responsive Communication</div>
+        <div><span>✓</span> Honest Service</div>
+        <div><span>✓</span> Quality Workmanship</div>
+        <div><span>✓</span> Serving Chicagoland</div>
       </div>
+    </section>
 
-      <div class="form-grid">
+    <section class="content">
+      <div class="container">
+        <span class="eyebrow">Our HVAC Services</span>
+        <h2 class="section-title">Comfort Solutions for Every Season.</h2>
+        <p class="section-intro">From emergency repairs to complete system installations, AMP Heating & Cooling is ready to help keep your home or business comfortable.</p>
 
-        <div class="field">
-          <label for="serviceType">Service Needed *</label>
-          <select id="serviceType" name="service_type" required>
-            <option value="">Choose a service</option>
-            <option>Air Conditioning Repair</option>
-            <option>AC Installation or Replacement</option>
-            <option>Furnace Repair</option>
-            <option>Heating Installation</option>
-            <option>Maintenance / Tune-Up</option>
-            <option>Commercial HVAC</option>
-            <option>Other HVAC Service</option>
-          </select>
+        <div class="cards">
+          <article class="card">
+            <div class="symbol">♨️</div>
+            <h3>Furnace Repair</h3>
+            <p>Professional service for heating systems that are not operating properly.</p>
+            <a href="heating.html">Learn More →</a>
+          </article>
+          <article class="card">
+            <div class="symbol">🏠</div>
+            <h3>Furnace Installation</h3>
+            <p>New heating system installation and replacement solutions.</p>
+            <a href="heating.html">Learn More →</a>
+          </article>
+          <article class="card">
+            <div class="symbol">❄️</div>
+            <h3>AC Repair</h3>
+            <p>Air conditioning troubleshooting, repair, and cooling solutions.</p>
+            <a href="cooling.html">Learn More →</a>
+          </article>
+          <article class="card">
+            <div class="symbol">🌬️</div>
+            <h3>AC Installation</h3>
+            <p>Professional air conditioner installation and system replacement.</p>
+            <a href="cooling.html">Learn More →</a>
+          </article>
+          <article class="card">
+            <div class="symbol">⚙️</div>
+            <h3>HVAC Maintenance</h3>
+            <p>Routine maintenance to help keep your system operating efficiently.</p>
+            <a href="request.html">Request Service →</a>
+          </article>
+          <article class="card">
+            <div class="symbol">📞</div>
+            <h3>Urgent HVAC Service</h3>
+            <p>Contact our team to discuss urgent heating and cooling problems.</p>
+            <a href="tel:2242761821">Call Now →</a>
+          </article>
         </div>
+      </div>
+    </section>
 
-        <div class="field">
-          <label for="propertyType">Property Type *</label>
-          <select id="propertyType" name="property_type" required>
-            <option value="">Choose property</option>
-            <option>Residential</option>
-            <option>Commercial</option>
-          </select>
+    <section class="content light">
+      <div class="container split">
+        <div class="photo" role="img" aria-label="HVAC equipment maintenance"></div>
+        <div>
+          <span class="eyebrow">Why Choose AMP?</span>
+          <h2 class="section-title">Local Expertise. Professional Service.</h2>
+          <p>At AMP Heating & Cooling, we focus on providing dependable HVAC solutions with clear communication and quality workmanship.</p>
+          <div class="checklist">
+            <p><b>✓</b> Residential & Commercial HVAC</p>
+            <p><b>✓</b> Heating & Cooling Services</p>
+            <p><b>✓</b> Reliable Customer Communication</p>
+            <p><b>✓</b> Serving Chicago and the Suburbs</p>
+          </div>
+          <a class="btn" href="about.html">About Our Company →</a>
         </div>
-
       </div>
+    </section>
 
-      <div class="field">
-        <label for="requestedDate">
-          Preferred Date (Optional)
-        </label>
-        <input type="date"
-          id="requestedDate"
-          name="preferred_date">
+    <section class="content">
+      <div class="container">
+        <span class="eyebrow">Our Process</span>
+        <h2 class="section-title">Getting Help Is Easy.</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="number">01</div>
+            <h3>Request Service</h3>
+            <p>Call AMP or send us your service details through our request page.</p>
+          </div>
+          <div class="step">
+            <div class="number">02</div>
+            <h3>We Contact You</h3>
+            <p>Our team reaches out to discuss your HVAC needs and scheduling.</p>
+          </div>
+          <div class="step">
+            <div class="number">03</div>
+            <h3>Technician Visit</h3>
+            <p>Our technician evaluates the problem and discusses available solutions.</p>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="field">
-        <label for="problem">
-          Describe Your HVAC Problem *
-        </label>
-        <textarea
-          id="problem"
-          name="problem_description"
-          placeholder="Tell us what's happening with your heating or cooling system..."
-          required></textarea>
+    <section class="content light">
+      <div class="container">
+        <span class="eyebrow">Service Areas</span>
+        <h2 class="section-title">Proudly Serving Chicago & Surrounding Suburbs.</h2>
+        <p class="section-intro">AMP Heating & Cooling serves residential and commercial customers throughout the greater Chicagoland area.</p>
+        <div class="areas">
+          <span class="area">Chicago</span>
+          <span class="area">Algonquin</span>
+          <span class="area">Crystal Lake</span>
+          <span class="area">Huntley</span>
+          <span class="area">Schaumburg</span>
+          <span class="area">Arlington Heights</span>
+          <span class="area">Naperville</span>
+          <span class="area">Northwest Suburbs</span>
+          <span class="area">North Suburbs</span>
+          <span class="area">West Suburbs</span>
+          <span class="area">South Suburbs</span>
+        </div>
+        <a href="areas.html" class="btn">View Service Areas →</a>
       </div>
+    </section>
 
-      <button class="btn btn-primary submit-btn"
-        type="submit">
-        Submit Service Request →
-      </button>
+    <section class="cta">
+      <div class="container">
+        <h2>Need Heating or Cooling Service?</h2>
+        <p>Contact AMP Heating & Cooling to discuss your HVAC needs.</p>
+        <div class="hero-buttons" style="justify-content:center">
+          <a href="request.html" class="btn">Request Service →</a>
+          <a href="tel:2242761821" class="btn btn-white">Call Now</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-      <p class="form-note">
-        We use your information to respond to
-        your service request. Form submissions
-        are processed through FormSubmit.
-      </p>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>AMP HEATING & COOLING</h3>
+          <p>Your comfort. Our priority.</p>
+          <p>Residential and commercial HVAC services throughout Chicago and surrounding suburbs.</p>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <a href="index.html">Home</a>
+          <a href="heating.html">Heating Services</a>
+          <a href="cooling.html">Cooling Services</a>
+          <a href="areas.html">Service Areas</a>
+          <a href="about.html">About AMP</a>
+        </div>
+        <div>
+          <h3>Contact Us</h3>
+          <a href="tel:2242761821">(224) 276-1821</a>
+          <a href="request.html">Request Service</a>
+          <a href="contact.html">Contact</a>
+          <p>Chicago, IL & Surrounding Suburbs</p>
+        </div>
+      </div>
+      <div class="copyright">© 2026 AMP Heating & Cooling. All Rights Reserved.</div>
+    </div>
+  </footer>
 
-      <div id="formMessage" role="alert"></div>
+  <!-- FAQ assistant: works on static GitHub Pages -->
+  <button class="chat-launch" id="chatLaunch" aria-expanded="false" aria-controls="chatPanel">✦ Ask AMP AI</button>
 
+  <section class="chat-panel" id="chatPanel" aria-label="AMP chat assistant">
+    <div class="chat-header">
+      <div><strong>✦ AMP Virtual Assistant</strong><br><small>HVAC questions & service information</small></div>
+      <button id="chatClose" aria-label="Close chat">×</button>
+    </div>
+    <div class="chat-messages" id="chatMessages" role="log" aria-live="polite">
+      <div class="message assistant">Welcome to AMP Heating & Cooling! I can help with common HVAC questions, service areas, and how to request an appointment.</div>
+    </div>
+    <form class="chat-form" id="chatForm">
+      <input id="chatInput" maxlength="500" placeholder="Ask about heating, AC, or service..." aria-label="Your message" required>
+      <button type="submit" aria-label="Send message">➤</button>
     </form>
-
-  </div>
-</section>
-
-<!-- CONTACT -->
-
-<section class="final-cta" id="contact">
-  <div class="container">
-
-    <span class="kicker">CONTACT AMP</span>
-    <h2>Ready for Better Comfort?</h2>
-
-    <p>
-      We're here to help with your residential
-      and commercial HVAC needs.
-    </p>
-
-    <a href="#request" class="btn btn-primary">
-      Request Service →
-    </a>
-
-    <a href="https://www.7-amp.com"
-      class="btn btn-dark"
-      target="_blank"
-      rel="noopener noreferrer">
-      Visit 7-amp.com
-    </a>
-
-    <p style="margin-top:25px">
-      Serving Chicago, surrounding suburbs,
-      and additional Northern Illinois communities.
-    </p>
-
-  </div>
-</section>
-
-</main>
-
-<!-- FOOTER -->
-
-<footer>
-  <div class="container">
-
-    <div class="footer-grid">
-
-      <div>
-        <h3>⚡ AMP Heating & Cooling</h3>
-        <p>
-          Powering your comfort.
-        </p>
-        <p>
-          Residential and commercial
-          HVAC service throughout Chicagoland.
-        </p>
-      </div>
-
-      <div>
-        <h3>Services</h3>
-        <div class="footer-links">
-          <a href="#services">Air Conditioning</a>
-          <a href="#services">Heating & Furnaces</a>
-          <a href="#services">Commercial HVAC</a>
-          <a href="#services">Maintenance</a>
-        </div>
-      </div>
-
-      <div>
-        <h3>Company</h3>
-        <div class="footer-links">
-          <a href="#about">About AMP</a>
-          <a href="#areas">Service Areas</a>
-          <a href="#request">Request Service</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-      © <span id="year"></span>
-      AMP Heating & Cooling. All rights reserved.
-    </div>
-
-  </div>
-</footer>
-
-<!-- AMP CHAT ASSISTANT -->
-
-<button class="chat-button" id="openChat">
-  💬 Ask AMP
-</button>
-
-<div class="chat-box" id="chatBox" hidden>
-
-  <div class="chat-header">
-    <div>
-      <strong>⚡ AMP Assistant</strong>
-      <small>Automatic HVAC help</small>
-    </div>
-
-    <button id="closeChat" aria-label="Close chat">
-      ×
-    </button>
-  </div>
-
-  <div class="chat-messages"
-    id="chatMessages"
-    aria-live="polite">
-
-    <div class="message bot-message">
-      Hi! Welcome to AMP Heating & Cooling.
-
-      How can I help you today?
-
-      You can ask about:
-      • Heating
-      • Air conditioning
-      • Commercial HVAC
-      • Maintenance
-      • Service areas
-      • Requesting service
-    </div>
-
-  </div>
-
-  <form class="chat-input" id="chatForm">
-    <input type="text"
-      id="chatText"
-      placeholder="Ask about HVAC..."
-      aria-label="Chat message"
-      required>
-
-    <button type="submit">
-      Send
-    </button>
-  </form>
-
-</div>
-
-<script>
-
-/* ======================================
-   AMP WEBSITE CONFIGURATION
-
-   Replace the business email below
-   with the email where AMP should
-   receive service requests.
-
-   Example:
-   const BUSINESS_EMAIL = "info@yourdomain.com";
-
-   Do not put an AI API key here.
-====================================== */
-
-const BUSINESS_EMAIL = "REPLACE_WITH_YOUR_BUSINESS_EMAIL";
-
-/* Optional: add the business phone */
-const BUSINESS_PHONE = "";
-
-/* FOOTER YEAR */
-
-document.getElementById("year").textContent =
-  new Date().getFullYear();
-
-/* MOBILE NAVIGATION */
-
-const menuBtn = document.getElementById("menuBtn");
-const mainNav = document.getElementById("mainNav");
-
-menuBtn.addEventListener("click", () => {
-  const isOpen = mainNav.classList.toggle("open");
-  menuBtn.setAttribute("aria-expanded", String(isOpen));
-});
-
-mainNav.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    mainNav.classList.remove("open");
-    menuBtn.setAttribute("aria-expanded", "false");
-  });
-});
-
-/* PREFERRED SERVICE DATE */
-
-const dateInput = document.getElementById("requestedDate");
-
-const today = new Date();
-const year = today.getFullYear();
-const month = String(today.getMonth() + 1).padStart(2, "0");
-const day = String(today.getDate()).padStart(2, "0");
-
-dateInput.min = `${year}-${month}-${day}`;
-
-/* SERVICE REQUEST FORM
-
-   Uses FormSubmit to deliver:
-   - Customer request details to AMP
-   - Automatic acknowledgement to customer
-
-   The business must verify its email
-   address with FormSubmit first.
-*/
-
-const serviceForm = document.getElementById("serviceForm");
-const formMessage = document.getElementById("formMessage");
-
-serviceForm.addEventListener("submit", function(event) {
-
-  if (
-    BUSINESS_EMAIL === "REPLACE_WITH_YOUR_BUSINESS_EMAIL" ||
-    !BUSINESS_EMAIL.includes("@")
-  ) {
-    event.preventDefault();
-
-    formMessage.textContent =
-      "The service form has not been activated yet. AMP must connect its business email before requests can be sent.";
-
-    return;
-  }
-
-  const confirmSubmit = window.confirm(
-    "Send your service request to AMP Heating & Cooling?"
-  );
-
-  if (!confirmSubmit) {
-    event.preventDefault();
-    return;
-  }
-
-  serviceForm.action =
-    "https://formsubmit.co/" + encodeURIComponent(BUSINESS_EMAIL);
-});
-
-/* AMP CHAT ASSISTANT
-
-   This is a rule-based automated assistant.
-   It does not call a real AI model.
-*/
-
-const openChat = document.getElementById("openChat");
-const closeChat = document.getElementById("closeChat");
-const chatBox = document.getElementById("chatBox");
-const chatForm = document.getElementById("chatForm");
-const chatText = document.getElementById("chatText");
-const chatMessages = document.getElementById("chatMessages");
-
-openChat.addEventListener("click", () => {
-  chatBox.hidden = false;
-  openChat.hidden = true;
-  chatText.focus();
-});
-
-closeChat.addEventListener("click", () => {
-  chatBox.hidden = true;
-  openChat.hidden = false;
-});
-
-function addMessage(message, sender) {
-  const div = document.createElement("div");
-
-  div.className = "message " +
-    (sender === "user" ? "user-message" : "bot-message");
-
-  // textContent prevents messages from injecting HTML.
-  div.textContent = message;
-
-  chatMessages.appendChild(div);
-  chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-
-function assistantReply(message) {
-
-  const text = message.toLowerCase();
-
-  if (
-    text.includes("appointment") ||
-    text.includes("schedule") ||
-    text.includes("book") ||
-    text.includes("request")
-  ) {
-    return "You can request service using the Request Service form on this website. Enter your contact details, service address, and HVAC issue. AMP will contact you to discuss scheduling. Your appointment is not confirmed until AMP contacts you.";
-  }
-
-  if (
-    text.includes("ac") ||
-    text.includes("air conditioner") ||
-    text.includes("cooling") ||
-    text.includes("cold air")
-  ) {
-    return "AMP provides air conditioning repair, installation, replacement, and maintenance. If your AC isn't cooling properly, you can submit a service request with details about the issue.";
-  }
-
-  if (
-    text.includes("furnace") ||
-    text.includes("heater") ||
-    text.includes("heating") ||
-    text.includes("no heat")
-  ) {
-    return "AMP offers furnace and heating system repairs, maintenance, and replacements. If your heating system has stopped working, please request service. If you smell gas, leave the building and contact your gas utility or emergency services from a safe location.";
-  }
-
-  if (
-    text.includes("commercial") ||
-    text.includes("rooftop") ||
-    text.includes("rtu") ||
-    text.includes("business")
-  ) {
-    return "AMP works with commercial HVAC systems, including rooftop equipment, commercial cooling, heating, and maintenance. Select Commercial HVAC in the service request form.";
-  }
-
-  if (
-    text.includes("maintenance") ||
-    text.includes("tune") ||
-    text.includes("inspection")
-  ) {
-    return "AMP offers HVAC maintenance and seasonal tune-ups. Regular maintenance can help identify equipment problems early. You can request a maintenance visit through our online form.";
-  }
-
-  if (
-    text.includes("price") ||
-    text.includes("cost") ||
-    text.includes("quote") ||
-    text.includes("estimate")
-  ) {
-    return "HVAC pricing depends on the equipment, service needed, and condition of the system. Please submit a request with the details so AMP can discuss your options. Pricing is not confirmed through this chat.";
-  }
-
-  if (
-    text.includes("chicago") ||
-    text.includes("area") ||
-    text.includes("suburb") ||
-    text.includes("location") ||
-    text.includes("algonquin") ||
-    text.includes("rockford")
-  ) {
-    return "AMP serves Chicago, surrounding suburbs, and select Northern Illinois areas. Visit the Service Areas section or contact us to confirm coverage for your address.";
-  }
-
-  if (
-    text.includes("hello") ||
-    text.includes("hi") ||
-    text.includes("hey")
-  ) {
-    return "Hello! Welcome to AMP Heating & Cooling. Do you need help with heating, cooling, maintenance, commercial HVAC, or requesting service?";
-  }
-
-  if (
-    text.includes("emergency") ||
-    text.includes("urgent")
-  ) {
-    return "If you have an urgent HVAC problem, describe it in your request and contact AMP directly when possible. If there is a gas leak, fire, or immediate danger, leave the area and call the appropriate emergency service.";
-  }
-
-  return "I can help with general questions about AMP heating, cooling, commercial HVAC, maintenance, service areas, and requesting service. For a specific equipment problem, please use our service request form.";
-}
-
-chatForm.addEventListener("submit", function(event) {
-  event.preventDefault();
-
-  const message = chatText.value.trim();
-
-  if (!message) return;
-
-  addMessage(message, "user");
-  chatText.value = "";
-
-  const reply = assistantReply(message);
-  addMessage(reply, "bot");
-});
-
-</script>
-
+    <div class="chat-note">Automated FAQ demo, not live AI. For service call (224) 276-1821.</div>
+  </section>
+
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const nav = document.getElementById("nav");
+
+    menuButton.addEventListener("click", () => {
+      const open = nav.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(open));
+    });
+
+    const chatPanel = document.getElementById("chatPanel");
+    const chatLaunch = document.getElementById("chatLaunch");
+    const chatClose = document.getElementById("chatClose");
+    const chatMessages = document.getElementById("chatMessages");
+    const chatForm = document.getElementById("chatForm");
+    const chatInput = document.getElementById("chatInput");
+
+    function toggleChat(open) {
+      chatPanel.classList.toggle("open", open);
+      chatLaunch.setAttribute("aria-expanded", String(open));
+      if (open) chatInput.focus();
+    }
+
+    chatLaunch.addEventListener("click", () => toggleChat(!chatPanel.classList.contains("open")));
+    chatClose.addEventListener("click", () => toggleChat(false));
+
+    function replyTo(message) {
+      const q = message.toLowerCase();
+
+      if (/gas smell|smell gas|gas leak|carbon monoxide|co alarm/.test(q)) {
+        return "If you suspect a gas leak or carbon monoxide, leave the building immediately and call 911 or your gas utility from outside. Do not use electrical switches or try to repair the equipment.";
+      }
+      if (/area|city|chicago|suburb|location|town|serve/.test(q)) {
+        return "AMP serves Chicago and surrounding suburbs throughout Chicagoland. Call (224) 276-1821 to confirm service at your address.";
+      }
+      if (/price|cost|quote|estimate|how much/.test(q)) {
+        return "Pricing depends on the system and work needed. Please call (224) 276-1821 for more information.";
+      }
+      if (/book|appointment|schedule|request|technician/.test(q)) {
+        return "You can request service on our Request Service page or call (224) 276-1821. An appointment is not confirmed until our team contacts you.";
+      }
+      if (/ac|cool|air condition|refrigerant/.test(q)) {
+        return "AMP provides AC repair, installation, and maintenance. If your AC isn't cooling, our technicians can evaluate it. Call (224) 276-1821 or visit Request Service.";
+      }
+      if (/heat|furnace|warm|heater/.test(q)) {
+        return "AMP provides heating repair, furnace installation, and maintenance. You can call (224) 276-1821 to arrange an evaluation.";
+      }
+      if (/emergency|urgent|asap/.test(q)) {
+        return "For urgent HVAC problems, call AMP at (224) 276-1821 to ask about availability. If there's immediate danger, contact emergency services.";
+      }
+      if (/hello|hi|hey/.test(q)) {
+        return "Hello! How can I help you with heating, cooling, or requesting HVAC service?";
+      }
+      return "I can help with AMP services, heating, AC, service areas, and appointment requests. For specific questions, please call (224) 276-1821.";
+    }
+
+    function addMessage(text, sender) {
+      const bubble = document.createElement("div");
+      bubble.className = "message " + sender;
+      bubble.textContent = text;
+      chatMessages.appendChild(bubble);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    chatForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const text = chatInput.value.trim();
+      if (!text) return;
+      addMessage(text, "user");
+      chatInput.value = "";
+      addMessage(replyTo(text), "assistant");
+    });
+  </script>
 </body>
 </html>
